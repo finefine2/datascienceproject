@@ -1,18 +1,18 @@
 from src.datascience import logger
 from src.datascience.pipeline.data_ingestion_pipeline import DataIngestionTrainingPipeline
 from src.datascience.pipeline.data_validation_pipeline import DataValidationTrainingPipeline
+from src.datascience.pipeline.data_transformation_pipeline import DataTransformationTrainingPipeline
 
-
-STAGE_NAME = "Data Ingestion stage" 
-try: 
-    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
-    data_ingestion = DataIngestionTrainingPipeline() 
-    data_ingestion.initiate_data_ingesetion()
-    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=========x")
+# STAGE_NAME = "Data Ingestion stage" 
+# try: 
+#     logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+#     data_ingestion = DataIngestionTrainingPipeline() 
+#     data_ingestion.initiate_data_ingesetion()
+#     logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=========x")
         
-except Exception as e: 
-    logger.exception(e) 
-    raise e 
+# except Exception as e: 
+#     logger.exception(e) 
+#     raise e 
 
 logger.info("Welcome to our custom logging data science")
 
@@ -27,3 +27,15 @@ try:
 except Exception as e: 
     logger.exception(e) 
     raise e 
+
+
+STAGE_NAME = "Data transformation stage"
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_transformation = DataTransformationTrainingPipeline() 
+    data_transformation.initiate_data_transformation()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx=========x")
+        
+except Exception as e: 
+    logger.exception(e) 
+    raise e
